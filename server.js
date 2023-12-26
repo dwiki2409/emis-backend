@@ -21,8 +21,13 @@ connectDB()
 
 const app = express()
 app.use(
-  cors()
+  cors({
+    origin: ['https://emis-frontend-tau.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  })
 )
+
 
 const PORT = process.env.PORT || 5000
 
